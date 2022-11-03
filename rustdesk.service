@@ -1,0 +1,14 @@
+[Unit]
+Description=Reverse Proxy Orbits Komputer
+After=docker.service
+BindsTo=docker.service
+ReloadPropagatedFrom=docker.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=__dir__
+ExecStart=__dir__/start.sh
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
